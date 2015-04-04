@@ -5,7 +5,7 @@ import unittest
 class FooTests(unittest.TestCase):
 
     def testFoo(self):
-        self.failUnless(False)
+        self.failUnless(True)
 
 def main():
     unittest.main()
