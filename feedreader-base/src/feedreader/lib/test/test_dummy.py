@@ -5,4 +5,4 @@ import unittest
 
 class FooTests(unittest.TestCase):
         def testFoo(self):
-            self.assertEqual(dummy(),"sDDDD");
+            self.assertEqual(dummy(),"DDDD");
