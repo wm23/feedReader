@@ -6,6 +6,6 @@ install:
     - "pip install coverage"
     - "pip install coveralls"
 script: 
-    - "coverage run --source=feedreader-base setup.py test"
+    - "coverage run --source=feedreader-base/src feedreader-base/setup.py test"
 after_success:
     coveralls
