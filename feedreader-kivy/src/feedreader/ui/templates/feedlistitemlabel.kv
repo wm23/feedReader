@@ -1,0 +1,13 @@
+#:kivy 1.0
+
+<FeedListItemLabel>:
+    color: (0,0,0,1)
+    selected_color: (0.8, 0.8, 0.8, 1)
+    deselected_color: (1, 1, 1, 1)
+    state_color: self.selected_color if self.is_selected else self.deselected_color
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size

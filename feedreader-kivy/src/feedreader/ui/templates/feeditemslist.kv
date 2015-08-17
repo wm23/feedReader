@@ -1,0 +1,14 @@
+#:kivy 1.0
+
+#: import DictAdapter kivy.adapters.dictadapter.DictAdapter
+#: import ListItemLabel kivy.uix.listview.ListItemLabel
+
+#: import FeedItemsList feedreader.ui.feeditemslist.FeedItemsList
+#: import FeedListItemLabel feedreader.ui.feedlistitemlabel.FeedListItemLabel
+
+#: include feedreader/ui/templates/feedlistitemlabel.kv
+
+
+<FeedItemsList>:
+    ListView:
+        adapter: DictAdapter(sorted_keys=root.item_strings, data=root.integers_dict, args_converter=root.args_converter, selection_mode='single', allow_empty_selection=False, cls = FeedListItemLabel)

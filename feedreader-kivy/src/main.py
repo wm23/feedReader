@@ -1,5 +1,3 @@
-__author__ = 'wojtek'
-
 import kivy
 kivy.require('1.9.0') # replace with your current kivy version !
 
@@ -9,11 +7,23 @@ from kivy.uix.label import Label
 
 from feedreader.lib import dummy
 
-class MyApp(App):
+from feedreader.ui.mainview import MainView
+
+__author__ = 'wojtek'
+__version__ = "0.0.1"
+
+APPLICATION_TITLE = "Feed Reader"
+APPLICATION_VERSION = __version__
+
+TEMPLATES_DIRECTORY = "feedreader/ui/templates"
+
+class FeedReaderApp(App):
+    kv_directory = TEMPLATES_DIRECTORY
 
     def build(self):
-        return Label(text=dummy.dummy())
+        self.title = APPLICATION_TITLE
+        return MainView()
 
 
 if __name__ == '__main__':
-    MyApp().run()
+    FeedReaderApp().run()

@@ -1,0 +1,15 @@
+#:kivy 1.0
+
+#:include feedreader/ui/templates/feeditemslist.kv
+
+<MainView>:
+    orientation: 'vertical'
+
+    ActionView:
+        size_hint_y: None
+        height: '60dp'
+        ActionPrevious:
+            title: app.title
+            with_previous: False
+    ScreenManager:
+        FeedItemsList
