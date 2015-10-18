@@ -9,5 +9,5 @@ setup(
     license='',
     author='Wojciech Miga',
     author_email='wojciech.miga@gmail.com',
-    description=''
+    description='' 
 )

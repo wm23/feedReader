@@ -10,5 +10,12 @@
 
 
 <FeedItemsList>:
+    args_converter: lambda row_index, rec: {'text': rec['summary'], 'title': rec['title'], 'image': rec['image'], 'cls_dicts': []}
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
     ListView:
-        adapter: DictAdapter(sorted_keys=root.item_strings, data=root.integers_dict, args_converter=root.args_converter, selection_mode='single', allow_empty_selection=False, cls = FeedListItemLabel)
+        adapter: DictAdapter(sorted_keys=root.order, data=root.data, args_converter=root.args_converter, selection_mode='single', allow_empty_selection=False, cls = FeedListItemLabel)
