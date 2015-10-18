@@ -3,10 +3,14 @@ python:
     - "2.7"
 install: 
     - "pip install -r feedreader-base/requirements.txt --use-mirrors"
+    - "pip install -r feedreader-kivy/requirements.txt --use-mirrors"
     - "pip install coverage"
     - "pip install coveralls"
 script: 
     - "cd feedreader-base"
+    - "coverage run --source=src setup.py test"
+    - "cd .."
+    - "cd feedreader-kivy"
     - "coverage run --source=src setup.py test"
 after_success:
     coveralls
