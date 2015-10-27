@@ -24,18 +24,27 @@ class FeedItem(Base):
     tags = relationship("FeedItemTag", backref="feed_item")
 
     def to_dto(self):
-        return data.FeedItem(self.id,
-                             self.title,
-                             
-                             self.summary,
-                             self.image_url,
-                             None,
-                             None,
-                             self.author,
-                             self.link,
-                             self.published,
-                             self.parsed,
-                             None)
+        tags = []
+        contents = []
+
+        for tag in self.tags:
+            tags.append(tag.to_dto())
+
+        for content in self.contents:
+            contents.append(content.to_dto())
+
+
+        return data.FeedItem(id=self.id,
+                             title=self.title,
+                             summary=self.summary,
+                             image=self.image_url,
+                             feed=self.feed_id,
+                             contents=contents,
+                             author=self.author,
+                             link=self.link,
+                             published=self.published,
+                             parsed=self.parsed,
+                             tags=tags)
 
 
 class FeedItemContent(Base):

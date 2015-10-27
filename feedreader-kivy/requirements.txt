@@ -1,0 +1,4 @@
+cython
+hg+http://bitbucket.org/pygame/pygame
+kivy
+-e ../feedreader-base

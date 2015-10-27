@@ -2,7 +2,7 @@ __author__ = 'wojtek'
 
 
 def dummy():
-    ccccc = "DDDD"
+    ccccc = "DDDD2"
     print(ccccc)
     return ccccc
   

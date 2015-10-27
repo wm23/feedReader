@@ -57,7 +57,9 @@ class FeedItemsManagerTests(unittest.TestCase):
             feed3_id = self.insert(session, Feed(name="Test feed in group 3", group_id=group3_id))
             feed4_id = self.insert(session, Feed(name="Test feed in group 4", group_id=group4_id))
 
-            self.insert(session, FeedItem(author="Test author", title="feed item 1", feed_id=feed1_id))
+            feed_item = FeedItem(author="Test author", title="feed item 1", feed_id=feed1_id)
+
+            self.insert(session, feed_item)
             self.insert(session, FeedItem(author="Test author", title="feed item 2", feed_id=feed2_id))
             self.insert(session, FeedItem(author="Test author", title="feed item 3", feed_id=feed3_id))
             self.insert(session, FeedItem(author="Test author", title="feed item 4", feed_id=feed4_id))
